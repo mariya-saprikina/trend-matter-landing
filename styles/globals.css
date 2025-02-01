@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .text-style-hero {
+    @apply text-hero font-bricolage_grotesque max-sm:text-[40px] max-md:text-[50px] max-sm:leading-[52px]
+  }
+
+  .text-style-h1 {
+    @apply text-h1 font-bricolage_grotesque max-md:text-[40px] max-sm:text-h2
+    /* max-sm:text-[40px] max-md:text-[50px] max-sm:leading-[52px] */
+  }
+  
+  .text-style-h2 {
+    @apply text-h2 font-bricolage_grotesque max-md:text-[30px] max-sm:text-h3
+  }
+
+  .text-style-h3 {
+    @apply text-h3 font-bricolage_grotesque max-md:text-[24px] max-sm:text-h4
+  }
+  
+  .text-style-body1 {
+    @apply text-body1 font-source_sans_3 max-sm:text-body2
+  }
+  
+  .text-style-body2 {
+    @apply text-body2 font-source_sans_3 max-sm:text-body3
+  }
+
+  .text-style-body3 {
+    @apply text-body3 font-source_sans_3 max-sm:text-body4
+  }
+
+  .text-style-body4 {
+    @apply text-body4 font-source_sans_3
+  }
+
+  .text-style-body5 {
+    @apply text-body5 font-source_sans_3
+  }
+  
+  .btn-primary {
+    @apply rounded-md border border-primary bg-primary p-1.5 px-2 text-style-body2 text-white font-source_sans_3 font-light transition-all hover:bg-white hover:text-primary
+  }
+  
+  .btn-secondary {
+    @apply rounded-md border border-primary p-1.5 px-2 text-style-body2 text-primary font-source_sans_3 font-light transition-all hover:bg-primary hover:text-white
+  }
+
+  .btn-brand-filled {
+    @apply rounded-md border border-brand bg-brand p-1.5 px-2 text-style-body5 text-white font-normal transition-all hover:bg-white hover:text-brand
+  }
+
+  .btn-brand-ghost {
+    @apply rounded-md border border-brand bg-white p-1.5 px-2 text-style-body5 text-brand font-normal transition-all hover:bg-brand hover:text-white
+  }
+  
+  .section-title {
+    @apply text-body4 font-source_sans_3 font-semibold tracking-widest text-brand bg-white rounded-2xl p-2 px-4
+  }
+
+  .gradient-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .gradient-container::before,
+  .gradient-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30%; /* Adjust as needed */
+    z-index: 10;
+  }
+  
+  .gradient-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(10, 62, 69, 1), rgba(31, 52, 55, 0));
+  }
+  
+  .gradient-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(10, 62, 69, 1), rgba(31, 52, 55, 0));
+  }
+
+  .research-input {
+    @apply rounded-lg border border-dusty_sky focus:border-2 focus:border-brand focus:ring-0 text-midnight_grey placeholder:text-style-body3 placeholder-ash_blue placeholder:font-light
+  }
+
+  .research-submit-btn {
+    @apply rounded-lg border border-brand bg-brand p-1.5 px-2 text-body2 text-white font-source_sans_3 font-normal
+  }
+
+  .research-error-msg {
+    @apply text-red-500 font-source_sans_3 font-normal text-[14px] sm:text-body4
+  }
+
+}
+
+@layer utilities {
+  .padding {
+    @apply sm:px-16 px-8 sm:py-24 py-12;
+  }
+
+  .padding-x {
+    @apply sm:px-16 px-8;
+  }
+
+  .padding-y {
+    @apply sm:py-24 py-12;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: static !important;
+  background: transparent !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: '' !important;
+}
+
+.swiper {
+  margin: 0 !important;
+}
+
+ .shad-input {
+  @apply mt-1 block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-gray-500 focus:border-2 focus:outline-none focus:ring-transparent sm:text-sm
+}
+
+.shad-button {
+  @apply flex h-10 w-full items-center justify-center space-x-2 rounded-md border px-4 text-sm font-normal transition-all border-gray-200 bg-white text-gray-600 hover:bg-gray-100
+}
+
+.shad-form_message {
+  @apply text-red-800
+}
